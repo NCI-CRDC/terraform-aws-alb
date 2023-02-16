@@ -14,22 +14,22 @@ output "dns_name" {
 }
 
 output "http_listener_arn" {
-  value       = aws_lb_listener.http[0].arn
+  value       = var.create_http_listener ? aws_lb_listener.http[0].arn : null
   description = "arn of the http listener"
 }
 
 output "http_listener_id" {
-  value       = aws_lb_listener.http[0].id
+  value       = var.create_http_listener ? aws_lb_listener.http[0].id : null
   description = "id of the http listener"
 }
 
 output "https_listener_arn" {
-  value       = aws_lb_listener.https[0].arn
+  value       = var.create_https_listener ? aws_lb_listener.https[0].arn : null
   description = "arn of the https listener"
 }
 
 output "https_listener_id" {
-  value       = aws_lb_listener.https[0].id
+  value       = var.create_https_listener ? aws_lb_listener.https[0].id : null
   description = "id of the https listener"
 }
 
