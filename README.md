@@ -13,7 +13,7 @@ The following provides an example of how to use this module by defining values f
 
 <pre><code>
 module "alb" {
-  source = "git::https://?ref=vX.X.X"
+  source = "git::https://github.com/NCI-CTOS/terraform-aws-alb?ref=vX.X.X"
 
   access_logs_enabled         = true 
   access_logs_bucket          = aws_s3_bucket.log_bucket.id
@@ -45,7 +45,7 @@ module "alb" {
     key2  = "value2"
   }
 }
-</code><pre>
+</code></pre>
 
 <!-- BEGIN_TF_DOCS -->
 # Requirements
