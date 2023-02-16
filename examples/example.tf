@@ -36,6 +36,14 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "ccdi-prod-mtp-log-bucket"
 }
 
+resource "aws_s3_bucket_public_access_block" "log_bucket" {
+  bucket                  = aws_s3_bucket.log_bucket.id
+  block_public_acls       = true
+  block_public_policy     = true
+  restrict_public_buckets = true
+  ignore_public_acls      = true
+}
+
 resource "aws_security_group" "alb" {
   name        = "ccdi-prod-mtp-alb-sg"
   description = "security group for ccdi-prod-mtp-alb"
@@ -44,6 +52,7 @@ resource "aws_security_group" "alb" {
 
 resource "aws_security_group_rule" "alb_ingress" {
   security_group_id = aws_security_group.alb.id
+  description       = "Allow ingress from the internet over HTTPS port 443"
   type              = "ingress"
   from_port         = 443
   to_port           = 443

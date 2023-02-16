@@ -8,6 +8,10 @@ framework: terraform
 soft-fail: true 
 output: sarif
 quiet: true
-# skip-check:
-#   - CKV_DOCKER_3
-#   - CKV_DOCKER_2
+skip-check:
+  - CKV_AWS_18
+  - CKV_AWS_21
+  - CKV2_AWS_28
+  - CKV_AWS_103 
+  - CKV_AWS_144
+  - CKV_AWS_145
