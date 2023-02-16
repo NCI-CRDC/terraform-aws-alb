@@ -45,7 +45,7 @@ module "alb" {
     key2  = "value2"
   }
 }
-</code><pre>
+</code></pre>
 
 <!-- BEGIN_TF_DOCS -->
 # Requirements
