@@ -52,6 +52,7 @@ resource "aws_security_group" "alb" {
 
 resource "aws_security_group_rule" "alb_ingress" {
   security_group_id = aws_security_group.alb.id
+  description       = "Allow ingress from the internet over HTTPS port 443"
   type              = "ingress"
   from_port         = 443
   to_port           = 443
